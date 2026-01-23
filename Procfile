@@ -1,1 +1,1 @@
-web: python manage.py migrate && python manage.py cargar_fiesta && gunicorn backend_municipio.wsgi
+web: gunicorn backend_municipio.wsgi
