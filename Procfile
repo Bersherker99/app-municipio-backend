@@ -1,0 +1,1 @@
+web: gunicorn backend_municipio.wsgi
