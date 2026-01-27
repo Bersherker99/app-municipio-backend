@@ -15,7 +15,7 @@ class Command(BaseCommand):
             descripcion="El evento principal con carros alegóricos llenos de flores y frutas.",
             fecha_inicio=timezone.now() + timedelta(days=1),
             fecha_fin=timezone.now() + timedelta(days=1, hours=4),
-            lugar="Av. Cevallos",
+            
             imagen_portada="eventos/desfile.jpg" 
         )
 
@@ -25,7 +25,7 @@ class Command(BaseCommand):
             descripcion="Misa campal tradicional frente a la Catedral.",
             fecha_inicio=timezone.now() + timedelta(days=2),
             fecha_fin=timezone.now() + timedelta(days=2, hours=2),
-            lugar="Atrio de la Catedral",
+          
             imagen_portada="eventos/bendicion.jpg"
         )
 
