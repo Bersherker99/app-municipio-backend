@@ -7,6 +7,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.conf.urls.static import static
 from eventos import views
+from django.http import HttpResponse
 
 # Esto crea las rutas automáticas para la API
 router = DefaultRouter()
@@ -20,3 +21,13 @@ urlpatterns = [
 ] 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
+
+def home(request):
+    return HttpResponse("<h1>🚀 ¡API del Municipio Funcionando!</h1><p>Prueba ir a <a href='/admin'>/admin</a></p>")
+
+urlpatterns = [
+    path('', home),  # <-- 3. AGREGA ESTA RUTA AL PRINCIPIO
+    path('admin/', admin.site.urls),
+    # ... tus otras rutas ...
+    path('evento/<int:evento_id>/', views.detalle_evento, name='detalle_evento'),
+]
