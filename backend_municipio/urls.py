@@ -6,6 +6,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.conf import settings
 from django.conf.urls.static import static
+from eventos import views
 
 # Esto crea las rutas automáticas para la API
 router = DefaultRouter()
