@@ -2,7 +2,7 @@ from django.db import models
 
 class Evento(models.Model):
     # Opciones para el tipo de evento
-    TIPOS = [
+    CATEGORIAS = [
         ('DESFILE', 'Desfiles y Pregones'),
         ('CONCIERTO', 'Conciertos y Música'),
         ('REINA', 'Elección de Reinas'),
@@ -13,6 +13,12 @@ class Evento(models.Model):
         ('BARRIO', 'Eventos Barriales'),
         ('OTRO', 'Otros'),
     ]
+    # El campo nuevo
+    categoria = models.CharField(
+        max_length=20, 
+        choices=CATEGORIAS, 
+        default='OTRO'
+    )
 
     titulo = models.CharField(max_length=200)
     descripcion = models.TextField()
@@ -21,7 +27,7 @@ class Evento(models.Model):
     
     # --- AQUÍ ESTÁ LA MAGIA ---
     es_megaevento = models.BooleanField(default=False, verbose_name="¿Es Megaevento?")
-    tipo = models.CharField(max_length=20, choices=TIPOS, default='OTRO')
+    tipo = models.CharField(max_length=20, choices=CATEGORIAS, default='OTRO')
     
     imagen_portada = models.URLField(max_length=500, null=True, blank=True)
     lugar_nombre = models.CharField(max_length=200)
