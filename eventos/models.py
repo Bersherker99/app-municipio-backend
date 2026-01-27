@@ -23,7 +23,7 @@ class Evento(models.Model):
     es_megaevento = models.BooleanField(default=False, verbose_name="¿Es Megaevento?")
     tipo = models.CharField(max_length=20, choices=TIPOS, default='OTRO')
     
-    imagen_portada = models.ImageField(upload_to='eventos/', null=True, blank=True)
+    imagen_portada = models.URLField(max_length=500, null=True, blank=True)
     lugar_nombre = models.CharField(max_length=200)
     latitud = models.DecimalField(max_digits=9, decimal_places=6)
     longitud = models.DecimalField(max_digits=9, decimal_places=6)
