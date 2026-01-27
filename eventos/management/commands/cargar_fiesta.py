@@ -12,21 +12,24 @@ class Command(BaseCommand):
         # Evento 1
         Evento.objects.create(
             titulo="Desfile de la Confraternidad",
-            descripcion="El evento principal con carros alegóricos llenos de flores y frutas.",
+            descripcion="El evento principal con carros alegóricos...",
             fecha_inicio=timezone.now() + timedelta(days=1),
             fecha_fin=timezone.now() + timedelta(days=1, hours=4),
-            
-            imagen_portada="eventos/desfile.jpg" 
+            imagen_portada="eventos/desfile.jpg",
+            # 👇 AGREGA ESTAS DOS LÍNEAS:
+            latitud=-1.2417,
+            longitud=-78.6197
         )
 
         # Evento 2
         Evento.objects.create(
-            titulo="Bendición de las Flores, Frutas y Pan",
-            descripcion="Misa campal tradicional frente a la Catedral.",
+            titulo="Bendición de las Flores...",
+            descripcion="Misa campal tradicional...",
             fecha_inicio=timezone.now() + timedelta(days=2),
             fecha_fin=timezone.now() + timedelta(days=2, hours=2),
-          
-            imagen_portada="eventos/bendicion.jpg"
+            imagen_portada="eventos/bendicion.jpg",
+            # 👇 AGREGA ESTAS DOS LÍNEAS TAMBIÉN AQUÍ:
+            latitud=-1.2417,
+            longitud=-78.6197
         )
-
         self.stdout.write(self.style.SUCCESS('✅ ¡Datos de la fiesta cargados correctamente!'))
