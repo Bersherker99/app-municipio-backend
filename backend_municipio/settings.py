@@ -119,12 +119,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-ec'  # Español de Ecuador
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Guayaquil'  # 👈 ESTO ES LO IMPORTANTE
 
 USE_I18N = True
-
 USE_TZ = True
 
 
